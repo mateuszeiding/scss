@@ -176,3 +176,31 @@ function toMarkdown(palette) {
     console.error("❌ genColors failed:", err);
     process.exit(1);
 });
+
+
+const OUT = resolve("./colors.config.d.ts");
+
+const mod = await import(pathToFileURL(PALETTE_PATH).href);
+const palette = mod.palette;
+
+function genTypes(obj) {
+    const lines = [];
+    lines.push("// Auto-generated types from colors.config.mjs");
+    lines.push("export const palette: {");
+    for (const [group, shades] of Object.entries(obj)) {
+        lines.push(`  ${JSON.stringify(group)}: {`);
+        for (const [key] of Object.entries(shades)) {
+            lines.push(`    ${JSON.stringify(key)}: string;`);
+        }
+        lines.push("  };");
+    }
+    lines.push("};");
+    lines.push("");
+    lines.push("export type Palette = typeof palette;");
+    lines.push("export type PaletteGroup = keyof Palette;");
+    lines.push("export type PaletteKey<G extends PaletteGroup = PaletteGroup> = keyof Palette[G];");
+    return lines.join("\n");
+}
+
+await writeFile(OUT, genTypes(palette), "utf8");
+console.log("✅ Generated types:", OUT);
