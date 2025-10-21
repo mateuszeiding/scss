@@ -29,19 +29,19 @@
 @mixin all {
   @content (null);
 
-  @include xl() {
-    @content ('xl');
-  }
-
-  @include lg() {
-    @content ('lg');
+  @include sm() {
+    @content ('sm');
   }
 
   @include md() {
     @content ('md');
   }
 
-  @include sm() {
-    @content ('sm');
+  @include lg() {
+    @content ('lg');
+  }
+
+  @include xl() {
+    @content ('xl');
   }
 }
