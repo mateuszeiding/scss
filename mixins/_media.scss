@@ -4,18 +4,18 @@
   }
 }
 @mixin lg() {
-  @media (min-width: 851px) {
+  @media (min-width: 900px) {
     @content;
   }
 }
 @mixin md() {
-  @media (min-width: 451px) {
+  @media (min-width: 600px) {
     @content;
   }
 }
 
 @mixin sm() {
-  @media (max-width: 450px) {
+  @media (max-width: 599px) {
     @content;
   }
 }

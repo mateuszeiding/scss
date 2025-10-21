@@ -1,9 +1,21 @@
 .p-relative {
-  position: relative;
+  position: relative !important;
 }
 
 .p-absolute {
-  position: absolute;
+  position: absolute !important;
+}
+
+.p-sticky {
+  position: sticky !important;
+}
+
+.p-fixed {
+  position: fixed !important;
+}
+
+.p-static {
+  position: static !important;
 }
 
 $poistion: ('left', 'right', 'top', 'bottom');

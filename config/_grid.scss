@@ -2,12 +2,20 @@
 
 $columns: 12;
 
-.container {
+%container {
   margin: 0 auto;
   width: 100%;
   max-width: 1920px;
-  box-sizing: border-box;
   padding: 0 3.6rem;
+}
+
+.container {
+  @extend %container;
+}
+
+.container-cp {
+  @extend %container;
+  padding: 0 1.2rem;
 }
 
 .row {
@@ -17,11 +25,12 @@ $columns: 12;
 }
 
 .col {
+  width: 100%;
   padding: 0 1.2rem;
 }
 
 @mixin col($i) {
-  width: calc(100% / #{$columns} * #{$i});
+  width: calc((100% / #{$columns}) * #{$i});
   padding: 0 1.2rem;
 }
 @mixin row-col($i) {
@@ -39,10 +48,8 @@ $columns: 12;
       @include col($i);
     }
 
-    .row-cols-#{$i}#{$sufix} {
-      .col {
-        @include row-col($i);
-      }
+    .row-cols-#{$i}#{$sufix} > .col {
+      @include row-col($i);
     }
   }
 }
