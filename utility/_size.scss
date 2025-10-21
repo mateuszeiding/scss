@@ -30,5 +30,7 @@ $size: (0, 10, 25, 50, 75, 100);
 }
 
 @include media.all() using ($m) {
-  @include sizer($m);
+  @each $val in $size {
+    @include sizer($val, $m);
+  }
 }
