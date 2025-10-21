@@ -1,4 +1,4 @@
-@use './../mixins/media-query' as media-query;
+@use './../mixins/media' as media;
 
 $fw: (
   light: 300,
@@ -7,11 +7,6 @@ $fw: (
   bold: 700,
 );
 
-@each $key, $value in $fw {
-  .fw-#{$key} {
-    font-weight: $value !important;
-  }
-}
 $fs: (
   xxs: 1rem,
   xs: 1.2rem,
@@ -23,107 +18,71 @@ $fs: (
   xxxl: 3.2rem,
 );
 
-@each $key, $value in $fs {
-  .fs-#{$key} {
-    font-size: $value !important;
-    @if $key == 'sm' {
-      line-height: 2rem;
+@mixin typographer($sufix) {
+  @if $sufix {
+    $sufix: '-' + $sufix;
+  }
+
+  @each $key, $value in $fw {
+    .fw-#{$key}#{$sufix} {
+      font-weight: $value !important;
     }
   }
-}
 
-.uppercase {
-  text-transform: uppercase !important;
-}
+  @each $key, $value in $fs {
+    .fs-#{$key}#{$sufix} {
+      font-size: $value !important;
+      @if $key == 'sm' {
+        line-height: 2rem;
+      }
+    }
+  }
 
-.lowercase {
-  text-transform: lowercase !important;
-}
+  .uppercase#{$sufix} {
+    text-transform: uppercase !important;
+  }
 
-.underline {
-  text-decoration: underline !important;
-}
+  .lowercase#{$sufix} {
+    text-transform: lowercase !important;
+  }
 
-.lh-1 {
-  line-height: 1 !important;
-}
+  .capitalize#{$sufix}::first-letter {
+    text-transform: uppercase;
+  }
 
-.lh-sm {
-  line-height: 1.25 !important;
-}
+  .underline#{$sufix} {
+    text-decoration: underline !important;
+  }
 
-.lh-base {
-  line-height: 1.5 !important;
-}
+  .lh-1#{$sufix} {
+    line-height: 1 !important;
+  }
 
-.lh-lg {
-  line-height: 1.75 !important;
-}
+  .lh-sm#{$sufix} {
+    line-height: 1.25 !important;
+  }
 
-.text-start {
-  text-align: left !important;
-}
+  .lh-base#{$sufix} {
+    line-height: 1.5 !important;
+  }
 
-.text-center {
-  text-align: center !important;
-}
+  .lh-lg#{$sufix} {
+    line-height: 1.75 !important;
+  }
 
-.text-end {
-  text-align: right !important;
-}
-
-@include media-query.lg() {
-  .text-lg-start {
+  .text-start#{$sufix} {
     text-align: left !important;
   }
 
-  .text-lg-center {
+  .text-center#{$sufix} {
     text-align: center !important;
   }
 
-  .text-lg-end {
+  .text-end#{$sufix} {
     text-align: right !important;
   }
 }
 
-@include media-query.md() {
-  .text-md-start {
-    text-align: left !important;
-  }
-
-  .text-md-center {
-    text-align: center !important;
-  }
-
-  .text-md-end {
-    text-align: right !important;
-  }
-}
-
-@include media-query.sm() {
-  .text-sm-start {
-    text-align: left !important;
-  }
-
-  .text-sm-center {
-    text-align: center !important;
-  }
-
-  .text-sm-end {
-    text-align: right !important;
-  }
-}
-
-@media print {
-  .text-print-start {
-    text-align: left !important;
-  }
-
-  .text-print-center {
-    text-align: center !important;
-  }
-
-  .text-print-end {
-    text-align: right !important;
-  }
+@include media.all() using ($m) {
+  @include typographer($m);
 }

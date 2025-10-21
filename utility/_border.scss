@@ -1,4 +1,4 @@
-@use './../mixins/media-query' as media-query;
+@use './../mixins/media' as media;
 
 @mixin borderer($sufix: null) {
   @if $sufix {
@@ -32,24 +32,6 @@
   }
 }
 
-@include borderer();
-
-@include media-query.xl() {
-  @include borderer('xl');
-}
-
-@include media-query.lg() {
-  @include borderer('lg');
-}
-
-@include media-query.md() {
-  @include borderer('md');
-}
-
-@include media-query.sm() {
-  @include borderer('sm');
-}
-
-@media print {
-  @include borderer('print');
+@include media.all() using ($m) {
+  @include borderer($m);
 }

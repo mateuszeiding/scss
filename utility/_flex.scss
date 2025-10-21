@@ -1,4 +1,4 @@
-@use './../mixins/media-query' as media-query;
+@use './../mixins/media' as media;
 
 @mixin flexer($sufix: null) {
   .flex-row#{$sufix} {
@@ -94,24 +94,6 @@
   }
 }
 
-@include flexer();
-
-@include media-query.xl() {
-  @include flexer('xl');
-}
-
-@include media-query.lg() {
-  @include flexer('lg');
-}
-
-@include media-query.md() {
-  @include flexer('md');
-}
-
-@include media-query.sm() {
-  @include flexer('sm');
-}
-
-@media print {
-  @include flexer('print');
+@include media.all() using ($m) {
+  @include flexer($m);
 }
