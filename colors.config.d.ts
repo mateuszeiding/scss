@@ -2,6 +2,7 @@
 export const palette: {
   "gray": {
     "ghost-white": string;
+    "ivory": string;
     "cool-gray": string;
     "paynes-gray": string;
     "outer-space": string;
@@ -21,6 +22,7 @@ export const palette: {
   "red": {
     "bright-pink": string;
     "old-rose": string;
+    "tomato": string;
     "redwood": string;
     "china-rose": string;
     "imperial-red": string;
@@ -46,9 +48,13 @@ export const palette: {
     "drab-dark-brown": string;
   };
   "purple": {
+    "magnolia": string;
+    "pale-purple": string;
+    "purple-pizzazz": string;
     "mardi-gras": string;
     "royal-purple": string;
     "finn": string;
+    "wine": string;
     "dark-purple": string;
   };
   "violet": {
@@ -66,6 +72,7 @@ export const palette: {
     "xanthous": string;
   };
   "brown": {
+    "rosy-brown": string;
     "lavender-blush": string;
     "sandy-brown": string;
     "wenge": string;
@@ -75,6 +82,7 @@ export const palette: {
   "orange": {
     "ut-orange": string;
     "cocoa-brown": string;
+    "flame": string;
     "burnt-orange": string;
   };
 };

@@ -67,6 +67,22 @@ $spacers: (
     .radius-#{$key}#{$sufix} {
       border-radius: $val !important;
     }
+
+    .radius-top-e-#{$key}#{$sufix} {
+      border-top-right-radius: $val !important;
+    }
+
+    .radius-top-s-#{$key}#{$sufix} {
+      border-top-left-radius: $val !important;
+    }
+
+    .radius-bot-s-#{$key}#{$sufix} {
+      border-bottom-left-radius: $val !important;
+    }
+
+    .radius-bot-e-#{$key}#{$sufix} {
+      border-bottom-right-radius: $val !important;
+    }
   }
 }
 

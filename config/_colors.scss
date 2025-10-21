@@ -9,6 +9,7 @@ $gray-cool-gray: #7e7f9a;
 $gray-davys-gray: #4e4b5c;
 $gray-eerie-black: #1c2321;
 $gray-ghost-white: #f8f8ff;
+$gray-ivory: #f5f9e9;
 $gray-outer-space: #464f51;
 $gray-paynes-gray: #5e6572;
 
@@ -33,6 +34,7 @@ $red-imperial-red: #f03a47;
 $red-old-rose: #bd6b73;
 $red-quinacridone-magenta: #993955;
 $red-redwood: #af5b5b;
+$red-tomato: #f06449;
 
 /* --- GREEN --- */
 $green-cambridge-blue: #9dcbba;
@@ -52,8 +54,12 @@ $green-tiffany-blue: #84dccf;
 /* --- PURPLE --- */
 $purple-dark-purple: #381d2a;
 $purple-finn: #613f75;
+$purple-magnolia: #f6f2ff;
 $purple-mardi-gras: #822e81;
+$purple-pale-purple: #e3d8f1;
+$purple-purple-pizzazz: #ff47da;
 $purple-royal-purple: #7b4b94;
+$purple-wine: #6d2e46;
 
 /* --- VIOLET --- */
 $violet-chinese-violet: #925e78;
@@ -72,6 +78,7 @@ $yellow-xanthous: #f7b32b;
 /* --- BROWN --- */
 $brown-lavender-blush: #f6e8ea;
 $brown-licorice: #22181c;
+$brown-rosy-brown: #bf8b85;
 $brown-sandy-brown: #ffa552;
 $brown-taupe: #4a4238;
 $brown-wenge: #6d5959;
@@ -79,6 +86,7 @@ $brown-wenge: #6d5959;
 /* --- ORANGE --- */
 $orange-burnt-orange: #ba5624;
 $orange-cocoa-brown: #d16014;
+$orange-flame: #ec4e20;
 $orange-ut-orange: #fb8b24;
 
 $grays: (
@@ -86,6 +94,7 @@ $grays: (
   gray-davys-gray: $gray-davys-gray,
   gray-eerie-black: $gray-eerie-black,
   gray-ghost-white: $gray-ghost-white,
+  gray-ivory: $gray-ivory,
   gray-outer-space: $gray-outer-space,
   gray-paynes-gray: $gray-paynes-gray,
 );
@@ -112,6 +121,7 @@ $reds: (
   red-old-rose: $red-old-rose,
   red-quinacridone-magenta: $red-quinacridone-magenta,
   red-redwood: $red-redwood,
+  red-tomato: $red-tomato,
 );
 
 $greens: (
@@ -133,8 +143,12 @@ $greens: (
 $purples: (
   purple-dark-purple: $purple-dark-purple,
   purple-finn: $purple-finn,
+  purple-magnolia: $purple-magnolia,
   purple-mardi-gras: $purple-mardi-gras,
+  purple-pale-purple: $purple-pale-purple,
+  purple-purple-pizzazz: $purple-purple-pizzazz,
   purple-royal-purple: $purple-royal-purple,
+  purple-wine: $purple-wine,
 );
 
 $violets: (
@@ -156,6 +170,7 @@ $yellows: (
 $browns: (
   brown-lavender-blush: $brown-lavender-blush,
   brown-licorice: $brown-licorice,
+  brown-rosy-brown: $brown-rosy-brown,
   brown-sandy-brown: $brown-sandy-brown,
   brown-taupe: $brown-taupe,
   brown-wenge: $brown-wenge,
@@ -164,6 +179,7 @@ $browns: (
 $oranges: (
   orange-burnt-orange: $orange-burnt-orange,
   orange-cocoa-brown: $orange-cocoa-brown,
+  orange-flame: $orange-flame,
   orange-ut-orange: $orange-ut-orange,
 );
 
@@ -192,6 +208,7 @@ $colors: map-merge-all($grays, $blues, $reds, $greens, $purples, $violets, $yell
   --color-gray-davys-gray: #{$gray-davys-gray};
   --color-gray-eerie-black: #{$gray-eerie-black};
   --color-gray-ghost-white: #{$gray-ghost-white};
+  --color-gray-ivory: #{$gray-ivory};
   --color-gray-outer-space: #{$gray-outer-space};
   --color-gray-paynes-gray: #{$gray-paynes-gray};
   --color-blue-berkeley-blue: #{$blue-berkeley-blue};
@@ -212,6 +229,7 @@ $colors: map-merge-all($grays, $blues, $reds, $greens, $purples, $violets, $yell
   --color-red-old-rose: #{$red-old-rose};
   --color-red-quinacridone-magenta: #{$red-quinacridone-magenta};
   --color-red-redwood: #{$red-redwood};
+  --color-red-tomato: #{$red-tomato};
   --color-green-cambridge-blue: #{$green-cambridge-blue};
   --color-green-celadon: #{$green-celadon};
   --color-green-dartmouth-green: #{$green-dartmouth-green};
@@ -227,8 +245,12 @@ $colors: map-merge-all($grays, $blues, $reds, $greens, $purples, $violets, $yell
   --color-green-tiffany-blue: #{$green-tiffany-blue};
   --color-purple-dark-purple: #{$purple-dark-purple};
   --color-purple-finn: #{$purple-finn};
+  --color-purple-magnolia: #{$purple-magnolia};
   --color-purple-mardi-gras: #{$purple-mardi-gras};
+  --color-purple-pale-purple: #{$purple-pale-purple};
+  --color-purple-purple-pizzazz: #{$purple-purple-pizzazz};
   --color-purple-royal-purple: #{$purple-royal-purple};
+  --color-purple-wine: #{$purple-wine};
   --color-violet-chinese-violet: #{$violet-chinese-violet};
   --color-violet-french-violet: #{$violet-french-violet};
   --color-violet-plum: #{$violet-plum};
@@ -241,11 +263,13 @@ $colors: map-merge-all($grays, $blues, $reds, $greens, $purples, $violets, $yell
   --color-yellow-xanthous: #{$yellow-xanthous};
   --color-brown-lavender-blush: #{$brown-lavender-blush};
   --color-brown-licorice: #{$brown-licorice};
+  --color-brown-rosy-brown: #{$brown-rosy-brown};
   --color-brown-sandy-brown: #{$brown-sandy-brown};
   --color-brown-taupe: #{$brown-taupe};
   --color-brown-wenge: #{$brown-wenge};
   --color-orange-burnt-orange: #{$orange-burnt-orange};
   --color-orange-cocoa-brown: #{$orange-cocoa-brown};
+  --color-orange-flame: #{$orange-flame};
   --color-orange-ut-orange: #{$orange-ut-orange};
 }
 
