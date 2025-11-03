@@ -12,6 +12,8 @@ $gray-ghost-white: #f8f8ff;
 $gray-ivory: #f5f9e9;
 $gray-outer-space: #464f51;
 $gray-paynes-gray: #5e6572;
+$gray-rich-black: #001514;
+$gray-white: #ffffff;
 
 /* --- BLUE --- */
 $blue-berkeley-blue: #12355b;
@@ -97,6 +99,8 @@ $grays: (
   gray-ivory: $gray-ivory,
   gray-outer-space: $gray-outer-space,
   gray-paynes-gray: $gray-paynes-gray,
+  gray-rich-black: $gray-rich-black,
+  gray-white: $gray-white,
 );
 
 $blues: (
@@ -211,6 +215,8 @@ $colors: map-merge-all($grays, $blues, $reds, $greens, $purples, $violets, $yell
   --color-gray-ivory: #{$gray-ivory};
   --color-gray-outer-space: #{$gray-outer-space};
   --color-gray-paynes-gray: #{$gray-paynes-gray};
+  --color-gray-rich-black: #{$gray-rich-black};
+  --color-gray-white: #{$gray-white};
   --color-blue-berkeley-blue: #{$blue-berkeley-blue};
   --color-blue-celtic-blue: #{$blue-celtic-blue};
   --color-blue-cerulean: #{$blue-cerulean};

@@ -1,6 +1,7 @@
 // Auto-generated types from colors.config.mjs
 export const palette: {
   "gray": {
+    "white": string;
     "ghost-white": string;
     "ivory": string;
     "cool-gray": string;
@@ -8,6 +9,7 @@ export const palette: {
     "outer-space": string;
     "davys-gray": string;
     "eerie-black": string;
+    "rich-black": string;
   };
   "blue": {
     "deep-sky-blue": string;

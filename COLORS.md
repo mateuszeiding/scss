@@ -11,6 +11,8 @@
 ![ivory](https://img.shields.io/badge/ivory-%23333?style=for-the-badge&label=%23F5F9E9&labelColor=%23F5F9E9)
 ![outer space](https://img.shields.io/badge/outer%20space-%23333?style=for-the-badge&label=%23464F51&labelColor=%23464F51)
 ![paynes gray](https://img.shields.io/badge/paynes%20gray-%23333?style=for-the-badge&label=%235E6572&labelColor=%235E6572)
+![rich black](https://img.shields.io/badge/rich%20black-%23333?style=for-the-badge&label=%23001514&labelColor=%23001514)
+![white](https://img.shields.io/badge/white-%23333?style=for-the-badge&label=%23FFFFFF&labelColor=%23FFFFFF)
 
 
 ### BLUE ![blue](https://placehold.co/20x20/blue/blue.png)

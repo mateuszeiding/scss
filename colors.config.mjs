@@ -1,5 +1,6 @@
 export const palette = {
   gray: {
+    white: '#ffffff',
     'ghost-white': '#f8f8ff',
     ivory: '#f5f9e9',
     'cool-gray': '#7e7f9a',
