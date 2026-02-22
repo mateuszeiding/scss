@@ -4,7 +4,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 /*
     2. Remove default margin and padding.
@@ -12,8 +12,8 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 /*
     Typographic tweaks!
@@ -21,8 +21,8 @@
     4. Improve text rendering
   */
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 /*
     5. Improve media defaults
@@ -32,8 +32,8 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 /*
     6. Remove built-in form typography styles
@@ -42,7 +42,7 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 /*
     7. Avoid text overflows
@@ -54,12 +54,12 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 /*
     8. Create a root stacking context
   */
 
 a {
-  outline-offset: 0;
+    outline-offset: 0;
 }

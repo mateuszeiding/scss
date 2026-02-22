@@ -14,7 +14,6 @@
 ![rich black](https://img.shields.io/badge/rich%20black-%23333?style=for-the-badge&label=%23001514&labelColor=%23001514)
 ![white](https://img.shields.io/badge/white-%23333?style=for-the-badge&label=%23FFFFFF&labelColor=%23FFFFFF)
 
-
 ### BLUE ![blue](https://placehold.co/20x20/blue/blue.png)
 
 ![berkeley blue](https://img.shields.io/badge/berkeley%20blue-%23333?style=for-the-badge&label=%2312355B&labelColor=%2312355B)
@@ -25,7 +24,6 @@
 ![indigo dye](https://img.shields.io/badge/indigo%20dye-%23333?style=for-the-badge&label=%232B4162&labelColor=%232B4162)
 ![picton blue](https://img.shields.io/badge/picton%20blue-%23333?style=for-the-badge&label=%2300ABE7&labelColor=%2300ABE7)
 ![steel blue](https://img.shields.io/badge/steel%20blue-%23333?style=for-the-badge&label=%234381C1&labelColor=%234381C1)
-
 
 ### RED ![red](https://placehold.co/20x20/red/red.png)
 
@@ -40,7 +38,6 @@
 ![quinacridone magenta](https://img.shields.io/badge/quinacridone%20magenta-%23333?style=for-the-badge&label=%23993955&labelColor=%23993955)
 ![redwood](https://img.shields.io/badge/redwood-%23333?style=for-the-badge&label=%23AF5B5B&labelColor=%23AF5B5B)
 ![tomato](https://img.shields.io/badge/tomato-%23333?style=for-the-badge&label=%23F06449&labelColor=%23F06449)
-
 
 ### GREEN ![green](https://placehold.co/20x20/green/green.png)
 
@@ -58,7 +55,6 @@
 ![stale gray](https://img.shields.io/badge/stale%20gray-%23333?style=for-the-badge&label=%236D8A96&labelColor=%236D8A96)
 ![tiffany blue](https://img.shields.io/badge/tiffany%20blue-%23333?style=for-the-badge&label=%2384DCCF&labelColor=%2384DCCF)
 
-
 ### PURPLE ![purple](https://placehold.co/20x20/purple/purple.png)
 
 ![dark purple](https://img.shields.io/badge/dark%20purple-%23333?style=for-the-badge&label=%23381D2A&labelColor=%23381D2A)
@@ -70,7 +66,6 @@
 ![royal purple](https://img.shields.io/badge/royal%20purple-%23333?style=for-the-badge&label=%237B4B94&labelColor=%237B4B94)
 ![wine](https://img.shields.io/badge/wine-%23333?style=for-the-badge&label=%236D2E46&labelColor=%236D2E46)
 
-
 ### VIOLET ![violet](https://placehold.co/20x20/violet/violet.png)
 
 ![chinese violet](https://img.shields.io/badge/chinese%20violet-%23333?style=for-the-badge&label=%23925E78&labelColor=%23925E78)
@@ -79,7 +74,6 @@
 ![russian violet](https://img.shields.io/badge/russian%20violet-%23333?style=for-the-badge&label=%23392061&labelColor=%23392061)
 ![ultra violet](https://img.shields.io/badge/ultra%20violet-%23333?style=for-the-badge&label=%234E5283&labelColor=%234E5283)
 
-
 ### YELLOW ![yellow](https://placehold.co/20x20/yellow/yellow.png)
 
 ![maize](https://img.shields.io/badge/maize-%23333?style=for-the-badge&label=%23FEE440&labelColor=%23FEE440)
@@ -87,7 +81,6 @@
 ![selective yellow](https://img.shields.io/badge/selective%20yellow-%23333?style=for-the-badge&label=%23FABC2A&labelColor=%23FABC2A)
 ![vanilla](https://img.shields.io/badge/vanilla-%23333?style=for-the-badge&label=%23F0F2A6&labelColor=%23F0F2A6)
 ![xanthous](https://img.shields.io/badge/xanthous-%23333?style=for-the-badge&label=%23F7B32B&labelColor=%23F7B32B)
-
 
 ### BROWN ![brown](https://placehold.co/20x20/brown/brown.png)
 
@@ -98,13 +91,11 @@
 ![taupe](https://img.shields.io/badge/taupe-%23333?style=for-the-badge&label=%234A4238&labelColor=%234A4238)
 ![wenge](https://img.shields.io/badge/wenge-%23333?style=for-the-badge&label=%236D5959&labelColor=%236D5959)
 
-
 ### ORANGE ![orange](https://placehold.co/20x20/orange/orange.png)
 
 ![burnt orange](https://img.shields.io/badge/burnt%20orange-%23333?style=for-the-badge&label=%23BA5624&labelColor=%23BA5624)
 ![cocoa brown](https://img.shields.io/badge/cocoa%20brown-%23333?style=for-the-badge&label=%23D16014&labelColor=%23D16014)
 ![flame](https://img.shields.io/badge/flame-%23333?style=for-the-badge&label=%23EC4E20&labelColor=%23EC4E20)
 ![ut orange](https://img.shields.io/badge/ut%20orange-%23333?style=for-the-badge&label=%23FB8B24&labelColor=%23FB8B24)
-
 
 ---

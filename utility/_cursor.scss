@@ -1,10 +1,7 @@
-$cursors: (
-  "pointer",
-  "default"
-);
+$cursors: ('pointer', 'default');
 
 @each $val in $cursors {
-  .cursor-#{$val} {
-    cursor: #{$val};
-  }
+    .cursor-#{$val} {
+        cursor: #{$val};
+    }
 }

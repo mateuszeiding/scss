@@ -1,26 +1,26 @@
-import { writeFile, mkdir } from "node:fs/promises";
-import { resolve, dirname, sep } from "node:path";
-import { pathToFileURL } from "node:url";
+import { mkdir, writeFile } from 'node:fs/promises';
+import { dirname, resolve, sep } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const rawArgs = process.argv.slice(2);
 const args = {};
 for (let i = 0; i < rawArgs.length; i++) {
     const a = rawArgs[i];
-    if (a.startsWith("--")) {
+    if (a.startsWith('--')) {
         const key = a.slice(2);
-        const val = rawArgs[i + 1] && !rawArgs[i + 1].startsWith("--") ? rawArgs[++i] : true;
+        const val = rawArgs[i + 1] && !rawArgs[i + 1].startsWith('--') ? rawArgs[++i] : true;
         args[key] = val;
     }
 }
 
 const CWD = process.cwd();
-const PALETTE_PATH = resolve(CWD, args.palette ?? "./colors.config.mjs");
-const OUT_SCSS = resolve(CWD, args["out-scss"] ?? "./config/_colors.scss");
-const OUT_MD = resolve(CWD, args["out-md"] ?? "./colors.md");
+const PALETTE_PATH = resolve(CWD, args.palette ?? './colors.config.mjs');
+const OUT_SCSS = resolve(CWD, args['out-scss'] ?? './config/_colors.scss');
+const OUT_MD = resolve(CWD, args['out-md'] ?? './colors.md');
 
 const isHex = (v) => /^#([0-9a-f]{6}|[0-9a-f]{3})$/i.test(v);
 const normHex = (h) =>
-    h.length === 4 ? "#" + h[1] + h[1] + h[2] + h[2] + h[3] + h[3] : h.toLowerCase();
+    h.length === 4 ? '#' + h[1] + h[1] + h[2] + h[2] + h[3] + h[3] : h.toLowerCase();
 
 function sortKeys(keys) {
     const allNum = keys.every((k) => /^\d+$/.test(k));
@@ -59,12 +59,12 @@ function toScss(palette) {
             if (!isHex(hex)) throw new Error(`Invalid HEX: ${g}.${k}=${palette[g][k]}`);
             out.push(`$${g}-${k}: ${hex};`);
         }
-        out.push("");
+        out.push('');
     }
 
     for (const g of groups) {
         const keys = sortKeys(Object.keys(palette[g]));
-        const entries = keys.map((k) => `  ${g}-${k}: $${g}-${k},`).join("\n");
+        const entries = keys.map((k) => `  ${g}-${k}: $${g}-${k},`).join('\n');
         out.push(`$${g}s: (\n${entries}\n);\n`);
     }
 
@@ -89,7 +89,7 @@ function toScss(palette) {
 `
     );
 
-    const mapList = groups.map((g) => `$${g}s`).join(", ");
+    const mapList = groups.map((g) => `$${g}s`).join(', ');
     out.push(`$colors: map-merge-all(${mapList});\n`);
 
     out.push(`:root {`);
@@ -109,11 +109,11 @@ function toScss(palette) {
 `
     );
 
-    return out.join("\n");
+    return out.join('\n');
 }
 
 function unslug(name) {
-    return name.replace(/-/g, " ");
+    return name.replace(/-/g, ' ');
 }
 
 function toMarkdown(palette) {
@@ -134,26 +134,23 @@ function toMarkdown(palette) {
             const hex = normHex(palette[g][k]).toUpperCase();
             const displayName = unslug(k); // zamiast gray-outer-space → outer space
             const label = encodeURIComponent(displayName);
-            const hexEsc = hex.replace("#", "%23");
+            const hexEsc = hex.replace('#', '%23');
             out.push(
                 `![${displayName}](https://img.shields.io/badge/${label}-%23333?style=for-the-badge&label=${hexEsc}&labelColor=${hexEsc})`
             );
         }
-        out.push(
-            "\n"
-        );
-
+        out.push('\n');
     }
 
     out.push(`---`);
-    return out.join("\n");
+    return out.join('\n');
 }
 
 // ---------- main ----------
 (async function main() {
     const mod = await import(pathToFileURL(PALETTE_PATH).href);
     const palette = mod.palette;
-    if (!palette || typeof palette !== "object") {
+    if (!palette || typeof palette !== 'object') {
         throw new Error(`Nie znaleziono exportu "palette" w ${PALETTE_PATH}`);
     }
 
@@ -166,41 +163,40 @@ function toMarkdown(palette) {
     await ensureDirFor(OUT_SCSS);
     await ensureDirFor(OUT_MD);
 
-    await writeFile(OUT_SCSS, toScss(palette), "utf8");
-    await writeFile(OUT_MD, toMarkdown(palette), "utf8");
+    await writeFile(OUT_SCSS, toScss(palette), 'utf8');
+    await writeFile(OUT_MD, toMarkdown(palette), 'utf8');
 
-    console.log("✅ Generated:");
-    console.log(" -", relFromCwd(OUT_SCSS));
-    console.log(" -", relFromCwd(OUT_MD));
+    console.log('✅ Generated:');
+    console.log(' -', relFromCwd(OUT_SCSS));
+    console.log(' -', relFromCwd(OUT_MD));
 })().catch((err) => {
-    console.error("❌ genColors failed:", err);
+    console.error('❌ genColors failed:', err);
     process.exit(1);
 });
 
-
-const OUT = resolve("./colors.config.d.ts");
+const OUT = resolve('./colors.config.d.ts');
 
 const mod = await import(pathToFileURL(PALETTE_PATH).href);
 const palette = mod.palette;
 
 function genTypes(obj) {
     const lines = [];
-    lines.push("// Auto-generated types from colors.config.mjs");
-    lines.push("export const palette: {");
+    lines.push('// Auto-generated types from colors.config.mjs');
+    lines.push('export const palette: {');
     for (const [group, shades] of Object.entries(obj)) {
         lines.push(`  ${JSON.stringify(group)}: {`);
         for (const [key] of Object.entries(shades)) {
             lines.push(`    ${JSON.stringify(key)}: string;`);
         }
-        lines.push("  };");
+        lines.push('  };');
     }
-    lines.push("};");
-    lines.push("");
-    lines.push("export type Palette = typeof palette;");
-    lines.push("export type PaletteGroup = keyof Palette;");
-    lines.push("export type PaletteKey<G extends PaletteGroup = PaletteGroup> = keyof Palette[G];");
-    return lines.join("\n");
+    lines.push('};');
+    lines.push('');
+    lines.push('export type Palette = typeof palette;');
+    lines.push('export type PaletteGroup = keyof Palette;');
+    lines.push('export type PaletteKey<G extends PaletteGroup = PaletteGroup> = keyof Palette[G];');
+    return lines.join('\n');
 }
 
-await writeFile(OUT, genTypes(palette), "utf8");
-console.log("✅ Generated types:", OUT);
+await writeFile(OUT, genTypes(palette), 'utf8');
+console.log('✅ Generated types:', OUT);

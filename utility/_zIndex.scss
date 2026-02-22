@@ -1,5 +1,5 @@
 @for $i from 1 through 5 {
-  .z-#{$i} {
-    z-index: $i;
-  }
+    .z-#{$i} {
+        z-index: $i;
+    }
 }

@@ -2,90 +2,90 @@
 @use './../mixins/media' as media;
 
 $spacers: (
-  0: 0,
-  1: 0.2rem,
-  2: 0.4rem,
-  3: 0.8rem,
-  4: 1.2rem,
-  5: 1.6rem,
-  6: 2.4rem,
-  7: 3.2rem,
-  8: 4.8rem,
-  9: 6.4rem,
+    0: 0,
+    1: 0.2rem,
+    2: 0.4rem,
+    3: 0.8rem,
+    4: 1.2rem,
+    5: 1.6rem,
+    6: 2.4rem,
+    7: 3.2rem,
+    8: 4.8rem,
+    9: 6.4rem,
 );
 
 @mixin spacer($sufix: null) {
-  @if $sufix {
-    $sufix: '-' + $sufix;
-  }
-
-  @each $key, $val in $spacers {
-    @each $attr, $prefix in (padding: p, margin: m) {
-      .#{$prefix}-#{$key}#{$sufix} {
-        #{$attr}: $val !important;
-      }
-
-      .#{$prefix}t-#{$key}#{$sufix} {
-        #{$attr}-top: $val !important;
-      }
-
-      .#{$prefix}e-#{$key}#{$sufix} {
-        #{$attr}-right: $val !important;
-      }
-
-      .#{$prefix}b-#{$key}#{$sufix} {
-        #{$attr}-bottom: $val !important;
-      }
-
-      .#{$prefix}s-#{$key}#{$sufix} {
-        #{$attr}-left: $val !important;
-      }
-
-      .#{$prefix}x-#{$key}#{$sufix} {
-        #{$attr}-left: $val !important;
-        #{$attr}-right: $val !important;
-      }
-
-      .#{$prefix}y-#{$key}#{$sufix} {
-        #{$attr}-top: $val !important;
-        #{$attr}-bottom: $val !important;
-      }
+    @if $sufix {
+        $sufix: '-' + $sufix;
     }
 
-    .gap-#{$key}#{$sufix} {
-      gap: $val !important;
-    }
+    @each $key, $val in $spacers {
+        @each $attr, $prefix in (padding: p, margin: m) {
+            .#{$prefix}-#{$key}#{$sufix} {
+                #{$attr}: $val !important;
+            }
 
-    .row-gap-#{$key}#{$sufix} {
-      row-gap: $val !important;
-    }
+            .#{$prefix}t-#{$key}#{$sufix} {
+                #{$attr}-top: $val !important;
+            }
 
-    .column-gap-#{$key}#{$sufix} {
-      column-gap: $val !important;
-    }
+            .#{$prefix}e-#{$key}#{$sufix} {
+                #{$attr}-right: $val !important;
+            }
 
-    .radius-#{$key}#{$sufix} {
-      border-radius: $val !important;
-    }
+            .#{$prefix}b-#{$key}#{$sufix} {
+                #{$attr}-bottom: $val !important;
+            }
 
-    .radius-top-e-#{$key}#{$sufix} {
-      border-top-right-radius: $val !important;
-    }
+            .#{$prefix}s-#{$key}#{$sufix} {
+                #{$attr}-left: $val !important;
+            }
 
-    .radius-top-s-#{$key}#{$sufix} {
-      border-top-left-radius: $val !important;
-    }
+            .#{$prefix}x-#{$key}#{$sufix} {
+                #{$attr}-left: $val !important;
+                #{$attr}-right: $val !important;
+            }
 
-    .radius-bot-s-#{$key}#{$sufix} {
-      border-bottom-left-radius: $val !important;
-    }
+            .#{$prefix}y-#{$key}#{$sufix} {
+                #{$attr}-top: $val !important;
+                #{$attr}-bottom: $val !important;
+            }
+        }
 
-    .radius-bot-e-#{$key}#{$sufix} {
-      border-bottom-right-radius: $val !important;
+        .gap-#{$key}#{$sufix} {
+            gap: $val !important;
+        }
+
+        .row-gap-#{$key}#{$sufix} {
+            row-gap: $val !important;
+        }
+
+        .column-gap-#{$key}#{$sufix} {
+            column-gap: $val !important;
+        }
+
+        .radius-#{$key}#{$sufix} {
+            border-radius: $val !important;
+        }
+
+        .radius-top-e-#{$key}#{$sufix} {
+            border-top-right-radius: $val !important;
+        }
+
+        .radius-top-s-#{$key}#{$sufix} {
+            border-top-left-radius: $val !important;
+        }
+
+        .radius-bot-s-#{$key}#{$sufix} {
+            border-bottom-left-radius: $val !important;
+        }
+
+        .radius-bot-e-#{$key}#{$sufix} {
+            border-bottom-right-radius: $val !important;
+        }
     }
-  }
 }
 
 @include media.all() using ($m) {
-  @include spacer($m);
+    @include spacer($m);
 }

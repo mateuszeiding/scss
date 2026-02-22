@@ -4,33 +4,33 @@
 $size: (0, 10, 25, 50, 75, 100);
 
 @mixin sizer($val, $sufix: null) {
-  @if $sufix {
-    $sufix: '-' + $sufix;
-  }
+    @if $sufix {
+        $sufix: '-' + $sufix;
+    }
 
-  .w-#{$val}#{$sufix} {
-    width: string.unquote('#{$val}%') !important;
-  }
-  .w-#{$val}v#{$sufix} {
-    width: string.unquote('#{$val}vw') !important;
-  }
-  .w-fit#{$sufix} {
-    width: fit-content;
-  }
+    .w-#{$val}#{$sufix} {
+        width: string.unquote('#{$val}%') !important;
+    }
+    .w-#{$val}v#{$sufix} {
+        width: string.unquote('#{$val}vw') !important;
+    }
+    .w-fit#{$sufix} {
+        width: fit-content;
+    }
 
-  .h-#{$val}#{$sufix} {
-    height: string.unquote('#{$val}%') !important;
-  }
-  .h-#{$val}v#{$sufix} {
-    height: string.unquote('#{$val}vh') !important;
-  }
-  .h-fit#{$sufix} {
-    height: fit-content;
-  }
+    .h-#{$val}#{$sufix} {
+        height: string.unquote('#{$val}%') !important;
+    }
+    .h-#{$val}v#{$sufix} {
+        height: string.unquote('#{$val}vh') !important;
+    }
+    .h-fit#{$sufix} {
+        height: fit-content;
+    }
 }
 
 @include media.all() using ($m) {
-  @each $val in $size {
-    @include sizer($val, $m);
-  }
+    @each $val in $size {
+        @include sizer($val, $m);
+    }
 }
