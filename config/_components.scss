@@ -51,7 +51,7 @@ $enable-form: true;
             background-color: var(--color-gray-ghost-white);
 
             &[type='text'],
-            textarea {
+            &.textarea {
                 width: 100%;
                 padding: 0.4rem 0.8rem;
                 flex: 0 0 100%;
