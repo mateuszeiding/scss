@@ -26,6 +26,7 @@ $enable-form: true;
       border-radius: 0.4rem;
       outline-offset: 0.2rem;
       border: 2px inset var(--border-color);
+      background-color: var(--color-gray-ghost-white);
 
       &[type='text'] {
         width: 100%;
@@ -35,7 +36,6 @@ $enable-form: true;
 
       &[type='radio'] {
         border-radius: 2.4rem;
-        background-color: var(--color-gray-ghost-white);
 
         &:checked::before {
           border-radius: 1.6rem;
@@ -58,7 +58,6 @@ $enable-form: true;
         }
 
         &[role='switch'] {
-          background-color: var(--color-gray-ghost-white);
           width: 4.8rem;
           border-radius: 1.6rem;
 
