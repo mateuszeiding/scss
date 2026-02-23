@@ -83,6 +83,13 @@ $fs: (
     }
 }
 
+.ellipsis {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @include media.all() using ($m) {
     @include typographer($m);
 }

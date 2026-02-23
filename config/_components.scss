@@ -1,4 +1,5 @@
 $enable-form: true;
+$enable-buttons: true;
 
 // FORM
 @if $enable-form {
@@ -126,3 +127,35 @@ $enable-form: true;
 }
 
 // END FORM
+
+// BUTTONS
+@if $enable-buttons {
+    .btn {
+        padding: var(--space-2) var(--space-4);
+        border: 2px solid var(--border-color);
+        border-radius: var(--space-2);
+        font-weight: 500;
+        background-color: var(--color-gray-ghost-white);
+        cursor: pointer;
+        line-height: 20px;
+        height: fit-content;
+        text-decoration: none;
+        color: #333;
+
+        &:hover {
+            background-color: var(--color-purple-magnolia);
+        }
+
+        &:active {
+            background-color: var(--color-purple-pale-purple);
+        }
+
+        &.active,
+        &.router-link-active {
+            color: var(--color-gray-ghost-white);
+            background-color: var(--color-purple-mardi-gras);
+        }
+    }
+}
+
+// END BUTTONS
